@@ -76,15 +76,19 @@ class SLL {
 	public void removeLast() {
 		Node current = head;
 		if (size > 0) {
-			for (int i = 1; i<size-1; size ++) {
-				current = current.getNextNode();
+			Node node;
+			int i = size-1;
+			
+			for (node = head; node != null; node = node.getNextNode()) {
+				if (i-- == 0) {
+					node.link(null);
+				}
 			}
-			current.link(null);
+			
 			tail = current;
 			size --;
 		}
 	}
-
 	public void print() {
 		if (size == 0) {
 			System.out.println("Empty linked list");
@@ -113,12 +117,16 @@ class SLL {
 			return null;
 		}
 		
-		Node current = head;
-		for (int i = 0; i < index; i++) {
-			current = current.getNextNode();
+		Node node;
+		int i = 0;
+		
+		for (node = head; head!=null; node = node.getNextNode()) {
+			if (i++ == index) {
+				return node;
+			}
 		}
 		
-		return current;
+		return null;
 	}
 	
 	public void clear() {

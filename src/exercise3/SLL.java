@@ -76,10 +76,15 @@ class SLL {
 	public void removeLast() {
 		Node current = head;
 		if (size > 0) {
-			for (int i = 1; i<size-1; size ++) {
-				current = current.getNextNode();
+			Node node;
+			int i = size-1;
+			
+			for (node = head; node != null; node = node.getNextNode()) {
+				if (i-- == 0) {
+					node.link(null);
+				}
 			}
-			current.link(null);
+			
 			tail = current;
 			size --;
 		}
@@ -113,12 +118,16 @@ class SLL {
 			return null;
 		}
 		
-		Node current = head;
-		for (int i = 0; i < index; i++) {
-			current = current.getNextNode();
+		Node node;
+		int i = 0;
+		
+		for (node = head; head!=null; node = node.getNextNode()) {
+			if (i++ == index) {
+				return node;
+			}
 		}
 		
-		return current;
+		return null;
 	}
 	
 	public void clear() {
@@ -130,7 +139,7 @@ class SLL {
 	public boolean findElement(int element) {
 		boolean find = false;
 		
-		for (Node node = head; node != null;node.getNextNode()) {
+		for (Node node = head; node != null;node = node.getNextNode()) {
 			if (node.getElement() == element) {
 				find = true;
 				break;
@@ -143,7 +152,7 @@ class SLL {
 	public int countElement(int element) {
 		int count = 0;
 		
-		for (Node node = head; node != null;node.getNextNode()) {
+		for (Node node = head; node != null;node = node.getNextNode()) {
 			if (node.getElement() == element) {
 				count ++;
 			}
@@ -155,7 +164,7 @@ class SLL {
 	public int sumElement() {
 		int sum = 0;
 
-		for (Node node = head; node != null;node.getNextNode()) {
+		for (Node node = head; node != null; node= node.getNextNode()) {
 			sum += node.getElement();
 		}
 		
