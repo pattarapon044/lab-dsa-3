@@ -1,7 +1,7 @@
 package exercise2;
 
 public class MainSLL{
-    public static void main(String[] args){
+    public static void main(String[] args) {
         SLL sll = new SLL();
         System.out.println("=== Empty SLL ===");
         System.out.println("Size = "+ sll.getSize());

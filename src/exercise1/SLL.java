@@ -3,49 +3,97 @@ package exercise1;
 class SLL {
 	// ----------------------- Node --------------------
 	private class Node {
+		
+		// Node attribute
 		private int element;
 		private Node next;
+		private Node previous;
 
-		// constructor
+		/**
+		 * Initialize data to class properties
+		 * 
+		 * @param data
+		 */
 		public Node(int data) {
 			element = data;
 			next = null;
+			previous = null;
 		}
 
-		// link a new node to this node
+		/**
+		 * Link this node to other node
+		 * 
+		 * @param newNode
+		 */
 		public void link(Node newNode) {
 			next = newNode;
+			
+			if (next != null) {
+				next.setPreviousNode(this);
+			}
 		}
 
-		// return next node
+		/**
+		 * @return Next node that be linked by this node
+		 */
 		public Node getNextNode() {
 			return next;
 		}
+		
+		/**
+		 * Set some node as previous of this node
+		 * 
+		 * @param previousNode
+		 */
+		public void setPreviousNode(Node previousNode) {
+			previous = previousNode;
+		}
+		
+		/**
+		 * @return Previous Node
+		 */
+		public Node getPreviousNode() {
+			return previous;
+		}
 
-		// return element of this node
+		/**
+		 * @return element of this node
+		 */
 		public int getElement() {
 			return element;
 		}
 	}
 	// --------------------- End Node --------------------
-
+	
 	// SLL properties and methods
 	private Node head = null;
 	private Node tail = null;
 	private int size = 0; // SLL's size
-
+	
+	/**
+	 * Add data to new node and append node to the last node
+	 * 
+	 * @param data
+	 */
 	public void addLast(int data) {
 		// create new node
 		Node newNode = new Node(data);
+		
 		if (size == 0) {
 			head = newNode;
 		} else {
 			tail.link(newNode);
 		}
+		
 		tail = newNode;
 		size++;
 	}
-
+	
+	/**
+	 * Add data to new node and append the node to the first node
+	 * 
+	 * @param data 
+	 */
 	public void addFirst(int data) {
 		// create new node
 		Node first = new Node(data);
@@ -60,36 +108,65 @@ class SLL {
 		head = first;
 		size ++;
 	}
-
+	
+	/**
+	 * Remove first Node from SLL
+	 */
 	public void removeFirst() {
 		if (size > 0) {
 			head = head.getNextNode();
 			size --;
 		}
 	}
-
+	
+	/**
+	 * Remove last Node from SLL
+	 */
 	public void removeLast() {
-		Node current = head;
-		if (size > 0) {
-			for (int i = 1; i<size-1; size ++) {
-				current = current.getNextNode();
-			}
-			current.link(null);
-			tail = current;
-			size --;
-		}
-	}
-
-	public void print() {
+		
 		if (size == 0) {
-			System.out.println("Empty linked list");
-		} else {
-			for (Node p = head; p != null; p = p.getNextNode()) {
-				System.out.print(p.getElement() + "->");
-			}
-			System.out.println("null");
+			return;
 		}
 		
+		if (size == 1) {
+			head = null;
+			tail = null;
+		}
+		
+		if (size > 1) {
+			tail = tail.getPreviousNode();
+			tail.link(null);
+		}
+		
+		size--;
+	}
+	
+	/**
+	 * This method is override from base object to format this class toString When call print
+	 *
+	 * @return The line of nodes that in SLL
+	 */
+	public String toString() {
+		// If node empty
+		if (size == 0) {
+			return "Empty linked list";
+		}
+		
+		// If have nodes
+		String node = "";
+		for (Node p = head; p != null; p = p.getNextNode()) {
+			node += p.getElement() + "->";
+		}
+		
+		node += "null";
+		return node;
+	}
+	
+	/**
+	 * Print out each nodes in this SLL
+	 */
+	public void print() {
+		System.out.println(this);
 	}
 	
 }
