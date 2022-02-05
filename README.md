@@ -2,7 +2,7 @@
 
 ## Look at other branches
 
-**branch** : [for template](https://github.com/pattarapon044/lab-dsa-3/tree/exercise)
+**branch** : [for exercise](https://github.com/pattarapon044/lab-dsa-3/tree/exercise)
 
 **branch** : [for following class](https://github.com/pattarapon044/lab-dsa-3/tree/easy_form)
 
