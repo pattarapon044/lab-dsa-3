@@ -10,7 +10,7 @@
 
 ### ⭐Completed code
 |
-[template code](https://github.com/pattarapon044/lab-dsa-3/blob/exercise/src/lab/sll/exercise/SLL.java) |
-[my work code](https://github.com/pattarapon044/lab-dsa-3/blob/master/src/exercise3/SLL.java) |
-[follow class code](https://github.com/pattarapon044/lab-dsa-3/blob/easy_form/src/SLL3.java) |
-[easy code](https://github.com/pattarapon044/lab-dsa-3/blob/self/src/lab/sll/exercise/SLL.java) |
+[template code](https://github.com/pattarapon044/lab-dsa-3/blob/Template/src/lab/sll/exercise/SLL.java) |
+[my work code](https://github.com/pattarapon044/lab-dsa-3/blob/MyCode/src/exercise3/SLL.java) |
+[follow class code](https://github.com/pattarapon044/lab-dsa-3/blob/FollowClass/src/SLL3.java) |
+[easy code](https://github.com/pattarapon044/lab-dsa-3/blob/EasyCode/src/lab/sll/exercise/SLL.java) |
