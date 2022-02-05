@@ -8,13 +8,31 @@ import org.junit.jupiter.api.Test;
 
 import lab.sll.exercise.SLL;
 
-class SLL1Test {
+class SLLTest {
 	
-	private SLL sll;
+	private class testSLL extends SLL{
+		
+		public String toString() {
+			if (this.getSize() == 0) {
+				return "Empty linked list";
+			}
+			
+			String format = new String();
+			
+			for (Node p:this.toArray()) {
+				format += p.getElement() + "->";
+			}
+			format += "null";
+			
+			return format;
+		}
+	}
+	
+	private testSLL sll;
 
 	@Test
 	void testAddValueFirst() {
-		sll = new SLL();
+		sll = new testSLL();
 		sll.addFirst(3);
 		sll.addFirst(2);
 		sll.addFirst(1);
@@ -23,7 +41,7 @@ class SLL1Test {
 	
 	@Test
 	void testAddValueLast() {
-		sll = new SLL();
+		sll = new testSLL();
 		sll.addLast(3);
 		sll.addLast(2);
 		sll.addLast(1);
@@ -32,7 +50,7 @@ class SLL1Test {
 	
 	@Test
 	void testRemoveFirst() {
-		sll = new SLL();
+		sll = new testSLL();
 		sll.addLast(1);
 		sll.addLast(2);
 		sll.addLast(3);
@@ -42,7 +60,7 @@ class SLL1Test {
 	
 	@Test
 	void testRemoveLast() {
-		sll = new SLL();
+		sll = new testSLL();
 		sll.addLast(1);
 		sll.addLast(2);
 		sll.addLast(3);
@@ -52,7 +70,7 @@ class SLL1Test {
 	
 	@Test
 	void testGetSizeMethod() {
-		sll = new SLL();
+		sll = new testSLL();
 		assertEquals(0, sll.getSize());
 		sll.addFirst(1);
 		assertEquals(1, sll.getSize());
@@ -65,7 +83,7 @@ class SLL1Test {
 	
 	@Test
 	void testIsEmptyMethod() {
-		sll = new SLL();
+		sll = new testSLL();
 		assertTrue(sll.isEmpty());
 		sll.addFirst(1);
 		assertFalse(sll.isEmpty());
@@ -79,7 +97,7 @@ class SLL1Test {
 	
 	@Test
 	void testGetMethod() {
-		sll = new SLL();
+		sll = new testSLL();
 		assertEquals(0, sll.get(0));
 		sll.addFirst(5);
 		sll.addLast(10);
@@ -93,7 +111,7 @@ class SLL1Test {
 	
 	@Test
 	void testClearMethod() {
-		sll = new SLL();
+		sll = new testSLL();
 		assertTrue(sll.isEmpty());
 		sll.addFirst(10);
 		sll.addLast(20);
@@ -105,7 +123,7 @@ class SLL1Test {
 
 	@Test
 	void testFindElement() {
-		sll = new SLL();
+		sll = new testSLL();
 		assertFalse(sll.findElement(0));
 		sll.addFirst(1);
 		sll.addLast(10);
@@ -118,7 +136,7 @@ class SLL1Test {
 	
 	@Test
 	void testFindCountElement(){
-		sll = new SLL();
+		sll = new testSLL();
 		sll.addFirst(1);
 		sll.addLast(1);
 		sll.addLast(5);
@@ -129,7 +147,7 @@ class SLL1Test {
 	
 	@Test
 	void testSumElement() {
-		sll = new SLL();
+		sll = new testSLL();
 		assertEquals(0, sll.sumElement());
 		sll.addFirst(10);
 		sll.addLast(20);
