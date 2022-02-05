@@ -2,7 +2,7 @@ package lab.sll.exercise;
 
 public class SLL {
 	// ----------------------- Node --------------------
-	private class Node {
+	public class Node {
 		private int element;
 		private Node next;
 
