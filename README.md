@@ -1,6 +1,6 @@
 # Lab-dsa-3
 
-## Look at other branches
+## 🌲Look at other branches
 
 **branch** : [for exercise](https://github.com/pattarapon044/lab-dsa-3/tree/exercise)
 
@@ -8,7 +8,7 @@
 
 **branch** : [for easy code](https://github.com/pattarapon044/lab-dsa-3/tree/self)
 
-## Complete code
+## ⭐Completed code
 
 [template code](https://github.com/pattarapon044/lab-dsa-3/blob/exercise/src/lab/sll/exercise/SLL.java)
 
