@@ -1,11 +1,11 @@
 package lab.sll.main;
 
-import lab.sll.exercise.SLL1;
+import lab.sll.exercise.SLL;
 
 //======================== Main Class ========================
 public class MainSLL1 {
 	public static void main(String[] args) {		
-	    SLL1 sll = new SLL1();
+	    SLL sll = new SLL();
 	    sll.addFirst(2);
 	    sll.addLast(3);
 	    sll.addFirst(1);

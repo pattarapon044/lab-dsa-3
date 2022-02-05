@@ -1,10 +1,10 @@
 package lab.sll.main;
 
-import lab.sll.exercise.SLL2;
+import lab.sll.exercise.SLL;
 
 public class MainSLL2{
     public static void main(String[] args) {
-        SLL2 sll = new SLL2();
+        SLL sll = new SLL();
         System.out.println("=== Empty SLL ===");
         System.out.println("Size = "+ sll.getSize());
         System.out.println("Empty = " + sll.isEmpty());

@@ -1,10 +1,10 @@
 package lab.sll.main;
 
-import lab.sll.exercise.SLL3;
+import lab.sll.exercise.SLL;
 
 public class MainSLL3{
     public static void main(String[] args){
-        SLL3 sll = new SLL3();
+        SLL sll = new SLL();
         sll.addFirst(11);
         sll.addLast(22);
         sll.addLast(11);
